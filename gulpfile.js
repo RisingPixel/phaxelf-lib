@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var path = require('path');
 var argv = require('yargs').argv;
 var gutil = require('gulp-util');
+var jsdoc = require('gulp-jsdoc3');
 var source = require('vinyl-source-stream');
 var buffer = require('gulp-buffer');
 var uglify = require('gulp-uglify');
@@ -153,12 +154,20 @@ function serve() {
 
 }
 
+function docs(cb) {
+  gulp.src(['README.md', SOURCE_PATH + '/**/*.js'], { read: false })
+    .pipe(jsdoc(cb));
 
+  gulp.watch(SOURCE_PATH + '/**/*.js', ['docs']);
+}
+
+
+gulp.task('docs', docs);
 gulp.task('cleanBuild', cleanBuild);
 gulp.task('copyStatic', ['cleanBuild'], copyStatic);
 gulp.task('build', ['copyStatic'], build);
 gulp.task('fastBuild', build);
-gulp.task('serve', ['build'], serve);
+gulp.task('serve', ['build', 'docs'], serve);
 gulp.task('watch-js', ['fastBuild'], browserSync.reload); // Rebuilds and reloads the project when executed.
 gulp.task('watch-static', ['copyStatic'], browserSync.reload);
 
