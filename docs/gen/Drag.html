@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: LocText</title>
+	<title>Documentation Class: Drag</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,16 +65,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: LocText</h1>
+	<h1 class="page-title">Class: Drag</h1>
 <section>
 
 <header>
     
         <h2>
-        LocText
+        Drag
         </h2>
         
-            <div class="class-description"><p>A Phaser Text extension handling text fitting and localization.</p></div>
+            <div class="class-description"><p>A static class to handle drag</p></div>
         
     
 </header>
@@ -86,7 +86,99 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="LocText"><span class="type-signature"></span>new LocText(game, x, y, text, options)</h4>
+    <h4 class="name" id="Drag"><span class="type-signature"></span>new Drag()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id=".bindEvent"><span class="type-signature">&lt;static> </span>bindEvent(subject, eventName, callback [, context])</h4>
     
     
 </dt>
@@ -94,7 +186,7 @@
 
     
     <div class="description">
-        <p>Create a LocText.</p>
+        <p>Binds the onDragStart, onDragUpdate and onDragEnd events on Sprites and Groups</p>
     </div>
     
 
@@ -117,6 +209,8 @@
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
         
 
@@ -129,13 +223,16 @@
 
         <tr>
             
-                <td class="name"><code>game</code></td>
+                <td class="name"><code>subject</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Phaser.Game</span>
+<span class="param-type">Phaser.Sprite</span>
+|
+
+<span class="param-type">Phaser.Group</span>
 
 
 
@@ -143,65 +240,25 @@
             </td>
 
             
-
-            
-
-            <td class="description last"><p>A Phaser Game instance.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>x</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">Number</span>
 
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>x coordinate.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>y</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">Number</span>
 
-
-
-            
-            </td>
-
+                
+                </td>
             
 
             
 
-            <td class="description last"><p>y coordinate.</p></td>
+            <td class="description last"><p>The Sprite or Group</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>text</code></td>
+                <td class="name"><code>eventName</code></td>
             
 
             <td class="type">
@@ -215,17 +272,57 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>the translation key to be localized.</p></td>
+            <td class="description last"><p>The event name, one of onDragStart, onDragUpdate, onDragEnd</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Callback handler</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code></td>
             
 
             <td class="type">
@@ -239,12 +336,107 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>An optional list of options.</p>
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
+            <td class="description last"><p>The callback context</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".enable"><span class="type-signature">&lt;static> </span>enable(subject [, clampToCenter])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Enables the drag feature on a Sprite (native) or a group (experimental)</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
 
 <table class="params table table-striped">
     <thead>
@@ -256,7 +448,11 @@
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -268,13 +464,16 @@
 
         <tr>
             
-                <td class="name"><code>width</code></td>
+                <td class="name"><code>subject</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">Phaser.Sprite</span>
+|
+
+<span class="param-type">Phaser.Group</span>
 
 
 
@@ -282,23 +481,35 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>The width of the text box</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The Sprite or Group to be dragged</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>height</code></td>
+                <td class="name"><code>clampToCenter</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
 
@@ -306,458 +517,32 @@
             </td>
 
             
-
-            
-
-            <td class="description last"><p>The height of the text box</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>container</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object containing the text</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>fontStyle</code></td>
-            
-
-            <td class="type">
-            
+                    &lt;optional><br>
                 
-<span class="param-type">string</span>
 
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The text style, i.e. '30px Arial'</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>fill</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">string</span>
 
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Fill color</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>align</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
+                </td>
             
 
             
-
-            <td class="description last"><p>Text alignment</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>padX</code></td>
-            
-
-            <td class="type">
-            
+                <td class="default">
                 
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>X padding referred to the container</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>padY</code></td>
-            
-
-            <td class="type">
-            
+                    false
                 
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
+                </td>
             
 
-            
-
-            <td class="description last"><p>Y padding referred to the container</p></td>
+            <td class="description last"><p>Clamp the item to its center while dragging</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-    
-    </div>
-
-    
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li>Phaser.Text</li>
-    </ul>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<hr>
-<dt class="name" id="localizationKey">
-    <h4 id="localizationKey"><span class="type-signature"></span>localizationKey<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Setter for the localization key</p>
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="textHeight">
-    <h4 id="textHeight"><span class="type-signature"></span>textHeight<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Setter for text height</p>
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="textWidth">
-    <h4 id="textWidth"><span class="type-signature"></span>textWidth<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Setter for text width</p>
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="refit"><span class="type-signature"></span>refit()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Refits the text inside the box provided</p>
-    </div>
-    
-
-    
-
-    
-
-    
     
 
     
