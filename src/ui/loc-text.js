@@ -12,7 +12,14 @@ class LocText extends Phaser.Text {
    * @param {Number} y - y coordinate.
    * @param {string} text - the translation key to be localized.
    * @param {Object} options - An optional list of options.
-   * You have to specify a `width`/`height` couple or a `container` option at least.
+   * @param {string} options.width - The width of the text box
+   * @param {string} options.height - The height of the text box
+   * @param {string} options.container - An object containing the text
+   * @param {string} options.fontStyle - The text style, i.e. '30px Arial'
+   * @param {string} options.fill - Fill color
+   * @param {string} options.align - Text alignment
+   * @param {string} options.padX - X padding referred to the container
+   * @param {string} options.padY - Y padding referred to the container
    */
   constructor(game, x, y, text, options = {}) {
     const fontStyle = options.fontStyle || '30px Arial';
@@ -71,7 +78,7 @@ class LocText extends Phaser.Text {
 
   /**
    * Setter for text width
-   * @param {string} value - The localization key to be translated
+   * @param {string} value - The text box width
    */
   set textWidth(value) {
     this.$_maxWidth = value;
@@ -84,8 +91,8 @@ class LocText extends Phaser.Text {
   }
 
   /**
-   * Setter for text width
-   * @param {string} value - The localization key to be translated
+   * Setter for text height
+   * @param {string} value - The text box height
    */
   set textHeight(value) {
     this.$_maxHeight = value;
