@@ -16,7 +16,7 @@ var browserSync = require('browser-sync');
 /**
  * Using different folders/file names? Change these constants:
  */
-var PHASER_PATH = './node_modules/phaser/build/';
+var DOCS_PATH = './docs/gen';
 var BUILD_PATH = './build';
 var SCRIPTS_PATH = BUILD_PATH + '/scripts';
 var SOURCE_PATH = './src';
@@ -70,27 +70,6 @@ function copyStatic() {
 }
 
 /**
- * Copies required Phaser files from the './node_modules/Phaser' folder into the './build/scripts' folder.
- * This way you can call 'npm update', get the lastest Phaser version and use it on your project with ease.
- */
-function copyPhaser() {
-
-  var srcList = ['phaser.min.js'];
-
-  if (!isProduction()) {
-    srcList.push('phaser.map', 'phaser.js');
-  }
-
-  srcList = srcList.map(function (file) {
-    return PHASER_PATH + file;
-  });
-
-  return gulp.src(srcList)
-    .pipe(gulp.dest(SCRIPTS_PATH));
-
-}
-
-/**
  * Transforms ES2015 code into ES5 code.
  * Optionally: Creates a sourcemap file 'game.js.map' for debugging.
  *
@@ -137,7 +116,7 @@ function serve() {
 
   var options = {
     server: {
-      baseDir: BUILD_PATH
+      baseDir: DOCS_PATH
     },
     open: false // Change it to true if you wish to allow Browsersync to open a browser window.
   };
