@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp",
     "production": "gulp --production",
-    "docs": "jsdoc src/"
+    "publish-docs": "git add -f docs && git commit docs -m \"Update docs\" && git push && git subtree push --prefix docs/gen/ origin gh-pages"
   },
   "repository": {
     "type": "git",
