@@ -5,23 +5,25 @@
 
 class GeomSpr extends Phaser.Sprite {
   /**
- * Create a LocText.
+ * Create geometric sprite shapes using Phaser graphics.
  * @constructor
  * @param {Phaser.Game} game - A Phaser Game instance.
  * @param {Number} x - x coordinate.
  * @param {Number} y - y coordinate.
  * @param {string} type - Type of Shape ('circle', 'rectangle' or 'polygon').
- * @param {array} path - Data to draw shapes. For polygon accepts any polygon construction setup*.
- * @param {Object} opt - An optional list of options.
- * @param {Hex} opt.bgColor - Shape's background color.
- * @param {Number} opt.aX - Anchor in x axis (0.5 by default).
- * @param {Number} opt.aX - Anchor in y axis (0.5 by default).
- * @param {*} opt.parent - Assign a parent if you setted it in this property.
- * @param {Object} opt.outLineData - Arguments to build outline border.
+ * @param {array} path - Data to draw shapes. For polygon accepts any polygon construction setup.*
+ * @param {Object} [opt] - An optional list of options.
+ * @param {Hex} [opt.bgColor = 0xFFFFFF] - Shape's background color.
+ * @param {Number} [opt.aX = 0.5] - Anchor in x axis.
+ * @param {Number} [opt.aY = 0.5] - Anchor in y axis.
+ * @param {Number} [opt.alpha = 1] - Alpha value.
+ * @param {Object} [opt.outLineData] - Arguments to build outline border.
  * @param {Number} opt.outLineData.width - Outline width.
  * @param {Hex} opt.outLineData.color - Outline color.
  * @param {Number} opt.outLineData.alpha - Outline alpha.
- * *Path will accept any, an array and the Phaser shapes itself.
+ * @param {*} [opt.parent] - Assign a parent if you setted it in this property.
+ * *Path will accept any, an array or the Phaser shapes itself. In case of polygon, it also accept
+ * all formats available to construct Phaser.Polygon
  */
   constructor(game, x, y, type, path, opt = {}) {
     super(game, x, y);
@@ -51,6 +53,8 @@ class GeomSpr extends Phaser.Sprite {
     this.anchor.x = (opt.aX === undefined || opt.aX === null) ? 0.5 : opt.aX;
     this.anchor.y = (opt.aY === undefined || opt.aY === null) ? 0.5 : opt.aY;
 
+    this.alpha = (opt.alpha === undefined || opt.alpha === null) ? 1 : opt.alpha;
+
     if (opt.parent) {
       opt.parent.addChild(this);
     }
@@ -72,7 +76,7 @@ class GeomSpr extends Phaser.Sprite {
   }
 
   static circle(path, graphics) {
-    if (path instanceof Array) {    
+    if (path instanceof Array) {
       graphics.drawCircle(path[0], path[1], path[2]);
     } else if (path instanceof Phaser.Rectangle) {
       graphics.drawRect(path.x, path.y, path.diameter);
