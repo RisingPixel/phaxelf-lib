@@ -37,7 +37,8 @@ class LocText extends Phaser.Text {
       this.wordWrapWidth = this.$_maxWidth;
     }
 
-    this.anchor = options.anchor || new Phaser.Point(0.5, 0.5);
+    this.anchor.x = (options.aX === undefined || options.aX === null) ? 0.5 : options.aX;
+    this.anchor.y = (options.aY === undefined || options.aY === null) ? 0.5 : options.aY;
 
     this.$_localizationKey = text;
     this.defaultFontSize = parseInt(fontStyle, 10) + ''; // eslint-disable-line prefer-template
