@@ -11,7 +11,7 @@ class GeomSpr extends Phaser.Sprite {
  * @param {Number} x - x coordinate.
  * @param {Number} y - y coordinate.
  * @param {string} type - Type of Shape ('circle', 'rectangle' or 'polygon').
- * @param {array} path - Data to draw shapes. For polygon accepts any polygon construction setup.
+ * @param {array} path - Data to draw shapes. For polygon accepts any polygon construction setup*.
  * @param {Object} opt - An optional list of options.
  * @param {Hex} opt.bgColor - Shape's background color.
  * @param {Number} opt.aX - Anchor in x axis (0.5 by default).
@@ -21,6 +21,7 @@ class GeomSpr extends Phaser.Sprite {
  * @param {Number} opt.outLineData.width - Outline width.
  * @param {Hex} opt.outLineData.color - Outline color.
  * @param {Number} opt.outLineData.alpha - Outline alpha.
+ * *Path will accept any, an array and the Phaser shapes itself.
  */
   constructor(game, x, y, type, path, opt = {}) {
     super(game, x, y);
@@ -61,11 +62,23 @@ class GeomSpr extends Phaser.Sprite {
   }
 
   static rectangle(path, graphics) {
-    graphics.drawRect(path[0], path[1], path[2], path.height[3]);
+    if (path instanceof Array) {
+      graphics.drawRect(path[0], path[1], path[2], path[3]);
+    } else if (path instanceof Phaser.Rectangle) {
+      graphics.drawRect(path.x, path.y, path.width, path.height);
+    } else {
+      console.warn('Phaxelf: Trying to build a rectangle with a wrong path format.');
+    }
   }
 
   static circle(path, graphics) {
-    graphics.drawCircle(path[0], path[1], path[2]);
+    if (path instanceof Array) {    
+      graphics.drawCircle(path[0], path[1], path[2]);
+    } else if (path instanceof Phaser.Rectangle) {
+      graphics.drawRect(path.x, path.y, path.diameter);
+    } else {
+      console.warn('Phaxelf: Trying to build a circle with a wrong path format.');
+    }
   }
 }
 
