@@ -11,7 +11,7 @@ class LocText extends Phaser.Text {
    * @param {Number} x - x coordinate.
    * @param {Number} y - y coordinate.
    * @param {string} text - the translation key to be localized.
-   * @param {Object} options - An optional list of options.
+   * @param {Object} [options={}] - An optional list of options.
    * @param {string} options.width - The width of the text box
    * @param {string} options.height - The height of the text box
    * @param {string} options.container - An object containing the text
