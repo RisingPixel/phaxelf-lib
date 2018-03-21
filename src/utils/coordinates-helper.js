@@ -1,4 +1,7 @@
-export default class CoordinatesHelper {
+/**
+ * A static class to handle coordinate transformations between objects
+ */
+class CoordinatesHelper {
   /**
    * Given a source and destination graphic, it returns the coordinates of `source`
    * related to the `destination` coordinate system
@@ -136,3 +139,5 @@ export default class CoordinatesHelper {
     return y;
   }
 }
+
+export default CoordinatesHelper;

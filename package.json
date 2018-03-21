@@ -9,7 +9,8 @@
     "start": "gulp",
     "prod": "gulp --production",
     "production": "gulp --production",
-    "publish-docs": "git add -f docs && git commit docs -m \"Update docs\" && git push && git subtree push --prefix docs/gen/ origin gh-pages"
+    "docs": "jsdoc README.md src/**/*.js -d docs/gen",
+    "docs:publish": "git add -f docs && git commit docs -m \"Update docs\" && git push && git subtree push --prefix docs/gen/ origin gh-pages"
   },
   "repository": {
     "type": "git",

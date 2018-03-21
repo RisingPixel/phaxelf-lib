@@ -18,11 +18,11 @@ var browserSync = require('browser-sync');
  */
 var DOCS_PATH = './docs/gen';
 var BUILD_PATH = './build';
-var SCRIPTS_PATH = BUILD_PATH + '/scripts';
+var SCRIPTS_PATH = BUILD_PATH;
 var SOURCE_PATH = './src';
 var STATIC_PATH = './static';
 var ENTRY_FILE = SOURCE_PATH + '/index.js';
-var OUTPUT_FILE = 'game.js';
+var OUTPUT_FILE = 'phaxelf.module.js';
 
 var keepFiles = false;
 
@@ -54,6 +54,7 @@ function logBuildMode() {
  */
 function cleanBuild() {
   if (!keepFiles) {
+    del(['docs/**/*.*']);
     del(['build/**/*.*']);
   } else {
     keepFiles = false;
@@ -137,7 +138,7 @@ function docs(cb) {
   gulp.src(['README.md', SOURCE_PATH + '/**/*.js'], { read: false })
     .pipe(jsdoc(cb));
 
-  gulp.watch(SOURCE_PATH + '/**/*.js', ['docs']);
+  gulp.watch(SOURCE_PATH + '/**/*.js', ['watch-docs']);
 }
 
 
@@ -146,7 +147,8 @@ gulp.task('cleanBuild', cleanBuild);
 gulp.task('copyStatic', ['cleanBuild'], copyStatic);
 gulp.task('build', ['copyStatic'], build);
 gulp.task('fastBuild', build);
-gulp.task('serve', ['build', 'docs'], serve);
+gulp.task('serve', ['docs'], serve);
+gulp.task('watch-docs', ['docs'], browserSync.reload); // Rebuilds and reloads the project when executed.
 gulp.task('watch-js', ['fastBuild'], browserSync.reload); // Rebuilds and reloads the project when executed.
 gulp.task('watch-static', ['copyStatic'], browserSync.reload);
 
