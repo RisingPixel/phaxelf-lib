@@ -8,7 +8,7 @@ class Drag {
   }
 
   /**
-   * Enables the drag feature on a Sprite (native) or a group (experimental)
+   * Enables the drag feature on a Sprite (native) or a group (not implemented)
    * @param {(Phaser.Sprite|Phaser.Group)} subject - The Sprite or Group to be dragged
    * @param {boolean} [clampToCenter=false] - Clamp the item to its center while dragging
    */
@@ -42,7 +42,7 @@ class Drag {
 
   static $onDragStart(sprite, pointer) {
     sprite.$_inSpritePos = sprite.game.input.getLocalPosition(sprite, pointer);
-    this.$onDragUpdate(sprite, pointer);
+    Drag.$onDragUpdate(sprite, pointer);
   }
 
   static $onDragUpdate(sprite, pointer) {
@@ -57,35 +57,41 @@ class Drag {
   }
 
   static $enableGroup(subject, clampToCenter = false) {
-    const pivotSprite = subject.game.add.sprite(0, 0, null);
-    subject.addChild(pivotSprite);
-    pivotSprite.sendToBack();
-    pivotSprite.width = subject.width;
-    pivotSprite.height = subject.height;
+    throw new Error("Drag&drop with groups is buggy! Don't use it.");
+    // const pivotSprite = subject.game.add.sprite(0, 0, null);
+    // subject.addChild(pivotSprite);
+    // pivotSprite.sendToBack();
 
-    pivotSprite.inputEnabled = true;
-    pivotSprite.input.enableDrag(clampToCenter);
-    if (!clampToCenter) {
-      pivotSprite.events.onDragStart.add(this.$onDragGroupStart, pivotSprite);
-    }
-    pivotSprite.events.onDragUpdate.add(this.$onDragGroupUpdate, pivotSprite);
+    // pivotSprite.width = subject.width;
+    // pivotSprite.height = subject.height;
+
+    // subject.$__pivot = pivotSprite;
+
+    // pivotSprite.inputEnabled = true;
+    // pivotSprite.input.enableDrag(clampToCenter);
+    // if (!clampToCenter) {
+    //   pivotSprite.events.onDragStart.add(this.$onDragGroupStart, pivotSprite);
+    // }
+    // pivotSprite.events.onDragUpdate.add(this.$onDragGroupUpdate, pivotSprite);
   }
 
-  static $onDragGroupStart(sprite, pointer) {
-    sprite.$_inSpritePos = sprite.game.input.getLocalPosition(sprite.parent, pointer);
-    this.$onDragUpdate(sprite, pointer);
-  }
+  // static $onDragGroupStart(sprite, pointer) {
+  //   sprite.x = 0;
+  //   sprite.y = 0;
+  //   sprite.$_inSpritePos = sprite.game.input.getLocalPosition(sprite, pointer);
+  //   Drag.$onDragGroupUpdate(sprite, pointer);
+  // }
 
-  static $onDragGroupUpdate(sprite, pointer) {
-    const pos = sprite.game.input.getLocalPosition(sprite.parent, pointer);
-    if (sprite.$_inSpritePos) {
-      sprite.parent.x = pos.x - sprite.$_inSpritePos.x;
-      sprite.parent.y = pos.y - sprite.$_inSpritePos.y;
-    } else {
-      sprite.parent.x = pos.x - (sprite.width * (0.5 - sprite.anchor.x));
-      sprite.parent.y = pos.y - (sprite.height * (0.5 - sprite.anchor.y));
-    }
-  }
+  // static $onDragGroupUpdate(sprite, pointer) {
+  //   const pos = sprite.game.input.getLocalPosition(sprite.parent, pointer);
+  //   if (sprite.$_inSpritePos) {
+  //     sprite.parent.x = pos.x - sprite.$_inSpritePos.x;
+  //     sprite.parent.y = pos.y - sprite.$_inSpritePos.y;
+  //   } else {
+  //     sprite.parent.x = pos.x - (sprite.width * (0.5 - sprite.anchor.x));
+  //     sprite.parent.y = pos.y - (sprite.height * (0.5 - sprite.anchor.y));
+  //   }
+  // }
 }
 
 export default Drag;

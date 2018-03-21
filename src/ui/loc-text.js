@@ -15,11 +15,11 @@ class LocText extends Phaser.Text {
    * @param {string} options.width - The width of the text box
    * @param {string} options.height - The height of the text box
    * @param {string} options.container - An object containing the text
-   * @param {string} options.fontStyle - The text style, i.e. '30px Arial'
-   * @param {string} options.fill - Fill color
-   * @param {string} options.align - Text alignment
-   * @param {string} options.padX - X padding referred to the container
-   * @param {string} options.padY - Y padding referred to the container
+   * @param {string} [options.fontStyle=30px Arial] - The text style, i.e. '30px Arial'
+   * @param {string} [options.fill=#000] - Fill color
+   * @param {string} [options.align=left] - Text alignment
+   * @param {string} [options.padX=0] - X padding referred to the container
+   * @param {string} [options.padY=0] - Y padding referred to the container
    */
   constructor(game, x, y, text, options = {}) {
     const fontStyle = options.fontStyle || '30px Arial';
