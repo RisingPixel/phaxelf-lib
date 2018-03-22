@@ -66,7 +66,7 @@ class RectangleOverlay extends Geom {
    * @param {Number} height - Height of masking rectangle.
    */
   addHighlightRect(x, y, width, height) {
-    this.$mask = new Geom(this.game, x, y, 'circle', [x, y, width, height]);
+    this.$mask = new Geom(this.game, x, y, 'rectangle', [x, y, width, height]);
     this.add(this.$mask);
     this.mask = this.$mask;
   }
