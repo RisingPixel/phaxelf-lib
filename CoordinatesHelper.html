@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="CoordinatesHelper.html">CoordinatesHelper</a></li><li><a href="Drag.html">Drag</a></li><li><a href="GeomSpr.html">GeomSpr</a></li><li><a href="LocText.html">LocText</a></li><li><a href="RectangleOverlay.html">RectangleOverlay</a></li><li><a href="TweenUtils.html">TweenUtils</a></li>
+					<li><a href="CoordinatesExtension.html">CoordinatesExtension</a></li><li><a href="CoordinatesHelper.html">CoordinatesHelper</a></li><li><a href="Drag.html">Drag</a></li><li><a href="GeomSpr.html">GeomSpr</a></li><li><a href="LocText.html">LocText</a></li><li><a href="RectangleOverlay.html">RectangleOverlay</a></li><li><a href="TweensExtension.html">TweensExtension</a></li><li><a href="TweenUtils.html">TweenUtils</a></li>
 				</ul>
 			</li>
 			
@@ -615,213 +615,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".pointInDescendant"><span class="type-signature">&lt;static> </span>pointInDescendant(point, reference, descendant)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Converts a point in an element coordinate system in one of it's descendant coordinates</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>point</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Phaser.Point</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A Point in <code>reference</code> coordinate system</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>reference</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Phaser.Sprite</span>
-|
-
-<span class="param-type">Phaser.Group</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A reference Sprite or Group</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>descendant</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Phaser.Sprite</span>
-|
-
-<span class="param-type">Phaser.Group</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A descendant Sprite or Group</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>The computed point</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Phaser.Point</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".positionInAncestor"><span class="type-signature">&lt;static> </span>positionInAncestor(sprite, ancestor [, pivot])</h4>
+    <h4 class="name" id=".pointInAncestor"><span class="type-signature">&lt;static> </span>pointInAncestor(sprite, ancestor [, pivot])</h4>
     
     
 </dt>
@@ -978,6 +772,212 @@ relative to its ancestor coordinate system</p>
             
 
             <td class="description last"><p>The pivot</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The computed point</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Phaser.Point</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".pointInDescendant"><span class="type-signature">&lt;static> </span>pointInDescendant(point, reference, descendant)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Converts a point in an element coordinate system in one of it's descendant coordinates</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Phaser.Point</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A Point in <code>reference</code> coordinate system</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>reference</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Phaser.Sprite</span>
+|
+
+<span class="param-type">Phaser.Group</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A reference Sprite or Group</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>descendant</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Phaser.Sprite</span>
+|
+
+<span class="param-type">Phaser.Group</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A descendant Sprite or Group</p></td>
         </tr>
 
     
@@ -1298,7 +1298,7 @@ related to the <code>destination</code> coordinate system</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on March 22nd 2018, 4:40:08 pm
+		on March 23rd 2018, 11:53:09 am
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
