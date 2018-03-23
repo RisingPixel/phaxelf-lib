@@ -1,6 +1,6 @@
 {
   "name": "phaxelf-lib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Go phax your elf",
   "main": "build/phaxelf.js",
   "module": "build/phaxelf.module.js",
