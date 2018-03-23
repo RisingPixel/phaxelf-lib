@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: TweenUtils</title>
+	<title>Documentation Class: Extensions</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,16 +65,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: TweenUtils</h1>
+	<h1 class="page-title">Class: Extensions</h1>
 <section>
 
 <header>
     
         <h2>
-        TweenUtils
+        Extensions
         </h2>
         
-            <div class="class-description"><p>A static helper class to handle tweens</p></div>
+            <div class="class-description"><p>Extensions manager to rule them all</p></div>
         
     
 </header>
@@ -86,7 +86,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="TweenUtils"><span class="type-signature"></span>new TweenUtils()</h4>
+    <h4 class="name" id="Extensions"><span class="type-signature"></span>new Extensions()</h4>
     
     
 </dt>
@@ -178,7 +178,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".tint"><span class="type-signature">&lt;static> </span>tint(subject, tint, duration [, easing] [, autostart] [, delay] [, repeat] [, yoyo])</h4>
+    <h4 class="name" id=".init"><span class="type-signature">&lt;static> </span>init(LU)</h4>
     
     
 </dt>
@@ -186,7 +186,7 @@
 
     
     <div class="description">
-        <p>Tweens a sprite to a certain tint value</p>
+        <p>Initializes all extensions</p>
     </div>
     
 
@@ -209,11 +209,7 @@
         <th>Type</th>
 
         
-        <th>Argument</th>
-        
 
-        
-        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -225,13 +221,13 @@
 
         <tr>
             
-                <td class="name"><code>subject</code></td>
+                <td class="name"><code>LU</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">PIXI.Sprite</span>
+<span class="param-type">Object</span>
 
 
 
@@ -239,297 +235,10 @@
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last"><p>The subject you want to tint</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>tint</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>The destination tint value</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>duration</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Duration in seconds</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>easing</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Phaser.Easing</span>
-|
-
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    Phaser.Easing.Default
-                
-                </td>
-            
-
-            <td class="description last"><p>The easing function</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>autostart</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    false
-                
-                </td>
-            
-
-            <td class="description last"><p>Auto-start the tween immediately</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>delay</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    0
-                
-                </td>
-            
-
-            <td class="description last"><p>Tween delay</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>repeat</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    0
-                
-                </td>
-            
-
-            <td class="description last"><p>Number of times should the tween be repeated. (-1 = forever)</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>yoyo</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    false
-                
-                </td>
-            
-
-            <td class="description last"><p>Yoyo repeat</p></td>
+            <td class="description last"><p>The layout utils class</p></td>
         </tr>
 
     
