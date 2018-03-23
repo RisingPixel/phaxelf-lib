@@ -4,7 +4,7 @@
 
 class Drag {
   constructor() {
-    throw new Error('AbstractClassError');
+    throw new Error('StaticClassError');
   }
 
   /**

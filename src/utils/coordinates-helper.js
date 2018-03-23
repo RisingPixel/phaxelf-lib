@@ -2,6 +2,9 @@
  * A static class to handle coordinate transformations between objects
  */
 class CoordinatesHelper {
+  constructor() {
+    throw new Error('StaticClassError');
+  }
   /**
    * Given a source and destination graphic, it returns the coordinates of `source`
    * related to the `destination` coordinate system

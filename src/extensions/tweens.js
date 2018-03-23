@@ -4,6 +4,10 @@ import TweenHelper from '../tweens/tween-utils';
  * Extensions for Phaser.Sprite class to help with tweens
  */
 class TweensExtension {
+  constructor() {
+    throw new Error('StaticClassError');
+  }
+
   static init() {
     function PhaserSpriteTween(
       properties, duration, ease = Phaser.Easing.Default, autostart = false,
