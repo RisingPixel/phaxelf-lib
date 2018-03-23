@@ -5,8 +5,9 @@ var argv = require('yargs').argv;
 var gutil = require('gulp-util');
 var jsdoc = require('gulp-jsdoc3');
 var source = require('vinyl-source-stream');
+var exec = require('child_process').exec;
 var buffer = require('gulp-buffer');
-var uglify = require('gulp-uglify');
+// var uglify = require('gulp-uglify');
 var gulpif = require('gulp-if');
 var exorcist = require('exorcist');
 var babelify = require('babelify');
@@ -79,34 +80,27 @@ function copyStatic() {
  * two different tasks (build and fastBuild) can use the same logic
  * but have different task dependencies.
  */
-function build() {
-
-  var sourcemapPath = SCRIPTS_PATH + '/' + OUTPUT_FILE + '.map';
+function build(cb) {
   logBuildMode();
 
-  return browserify({
-    paths: [path.join(__dirname, 'src')],
-    entries: ENTRY_FILE,
-    debug: true,
-    transform: [
-      [
-        babelify, {
-          presets: ['es2015']
-        }
-      ]
-    ]
-  })
-    .transform(babelify)
-    .bundle().on('error', function (error) {
-      gutil.log(gutil.colors.red('[Build Error]', error.message));
-      this.emit('end');
-    })
-    .pipe(gulpif(!isProduction(), exorcist(sourcemapPath)))
-    .pipe(source(OUTPUT_FILE))
-    .pipe(buffer())
-    .pipe(gulpif(isProduction(), uglify()))
-    .pipe(gulp.dest(SCRIPTS_PATH));
+  var options = {
+    continueOnError: false, // default = false, true means don't emit error event
+    pipeStdout: false, // default = false, true means stdout is written to file.contents
+    customTemplatingThing: "test" // content passed to lodash.template()
+  };
+  var reportOptions = {
+    err: true, // default = true, false means don't write err
+    stderr: true, // default = true, false means don't write stderr
+    stdout: true // default = true, false means don't write stdout
+  }
+  exec('npm run build', function (err, stdout, stderr) {
+    console.log(stderr);
+    cb(err);
+  });
 
+  // return gulp.src(SOURCE_PATH + '/**/*.js')
+  //   .pipe(exec('npm run build', options))
+  //   .pipe(exec.reporter(reportOptions));
 }
 
 /**
@@ -125,7 +119,8 @@ function serve() {
   browserSync(options);
 
   // Watches for changes in files inside the './src' folder.
-  gulp.watch(SOURCE_PATH + '/**/*.js', ['watch-docs']);
+  gulp.watch(SOURCE_PATH + '/**/*.js', ['watch-docs', 'watch-js']);
+  gulp.watch('./README.md', ['watch-docs']);
 }
 
 function docs(cb) {
@@ -134,13 +129,12 @@ function docs(cb) {
 }
 
 
-gulp.task('docs', docs);
 gulp.task('cleanBuild', cleanBuild);
-gulp.task('copyStatic', ['cleanBuild'], copyStatic);
-gulp.task('build', ['copyStatic'], build);
-gulp.task('fastBuild', build);
-gulp.task('serve', ['docs'], serve);
+gulp.task('build', ['cleanBuild'], build);
+gulp.task('docs', docs);
+gulp.task('serve', ['docs', 'build'], serve);
 gulp.task('watch-docs', ['docs'], browserSync.reload); // Rebuilds and reloads the project when executed.
+gulp.task('watch-js', ['build'], browserSync.reload); // Rebuilds and reloads the project when executed.
 
 /**
  * The tasks are executed in the following order:
