@@ -17,7 +17,7 @@ class CoordinatesHelper {
     const destinationTree = this.getTree(destination);
     const commonAncestor = this.findCommonAncestor(sourceTree, destinationTree);
 
-    const parentPosition = this.positionInAncestor(source, commonAncestor, reference);
+    const parentPosition = this.pointInAncestor(source, commonAncestor, reference);
     const toPosition = this.pointInDescendant(parentPosition, commonAncestor, destination);
 
     return toPosition;
