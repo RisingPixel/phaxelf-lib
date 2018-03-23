@@ -28,7 +28,7 @@ class CoordinatesExtension {
     Phaser.Sprite.prototype.$$positionIn = PhaserSpritePositionIn;
 
     function PhaserSpriteContains(point) {
-      CoordinatesHelper.contains(point, this);
+      return CoordinatesHelper.contains(point, this);
     }
     Phaser.Sprite.prototype.$$contains = PhaserSpriteContains;
   }
