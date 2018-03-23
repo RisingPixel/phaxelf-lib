@@ -41,7 +41,7 @@ class CoordinatesHelper {
    * @param {Phaser.Point} [pivot=new Phaser.Point(0.5, 0.5)] - The pivot
    * @returns {Phaser.Point} The computed point
    */
-  static positionInAncestor(sprite, ancestor, pivot = new Phaser.Point(0.5, 0.5)) {
+  static pointInAncestor(sprite, ancestor, pivot = new Phaser.Point(0.5, 0.5)) {
     const coordinates = new Phaser.Point(
       this.getPositionX(sprite, pivot.x, true),
       this.getPositionY(sprite, pivot.y, true),
