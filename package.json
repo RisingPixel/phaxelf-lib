@@ -1,6 +1,6 @@
 {
   "name": "phaxelf-lib",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Go phax your elf",
   "main": "build/phaxelf.js",
   "module": "build/phaxelf.module.js",
@@ -11,7 +11,9 @@
     "prod": "gulp --production",
     "production": "gulp --production",
     "docs": "gulp docs",
-    "docs:publish": "git checkout docs-files && git merge master --no-edit && gulp docs && git add -f docs && git commit docs/ --allow-empty -m \"Update docs\" && git push -f origin docs-files && git subtree push --prefix docs/gen/ origin gh-pages && git checkout master"
+    "docs:publish": "git checkout docs-files && git merge master --no-edit && gulp docs && git add -f docs && git commit docs/ --allow-empty -m \"Update docs\" && git push -f origin docs-files && git subtree push --prefix docs/gen/ origin gh-pages && git checkout master",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",

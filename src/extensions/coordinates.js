@@ -4,6 +4,10 @@ import CoordinatesHelper from '../utils/coordinates-helper';
  * Extensions for Phaser.Sprite class to help with coordinates
  */
 class CoordinatesExtension {
+  constructor() {
+    throw new Error('StaticClassError');
+  }
+
   static init(LU) {
     this.LU = LU;
 
