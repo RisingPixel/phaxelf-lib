@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: CoordinatesHelper</title>
+	<title>Documentation Class: Text</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,16 +65,14 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: CoordinatesHelper</h1>
+	<h1 class="page-title">Class: Text</h1>
 <section>
 
 <header>
     
         <h2>
-        CoordinatesHelper
+        Text
         </h2>
-        
-            <div class="class-description"><p>A static class to handle coordinate transformations between objects</p></div>
         
     
 </header>
@@ -86,12 +84,16 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="CoordinatesHelper"><span class="type-signature"></span>new CoordinatesHelper()</h4>
+    <h4 class="name" id="Text"><span class="type-signature"></span>new Text()</h4>
     
     
 </dt>
 <dd>
 
+    
+    <div class="description">
+        <p>Phaser Sprite extensions</p>
+    </div>
     
 
     
@@ -178,7 +180,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".contains"><span class="type-signature">&lt;static> </span>contains(point, sprite)</h4>
+    <h4 class="name" id="$$centered"><span class="type-signature"></span>$$centered( [anchor])</h4>
     
     
 </dt>
@@ -186,445 +188,7 @@
 
     
     <div class="description">
-        <p>Checks if a point is contained inside a sprite</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>point</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Phaser.Point</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A Point</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>sprite</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Phaser.Sprite.html">Phaser.Sprite</a></span>
-|
-
-<span class="param-type"><a href="Phaser.Group.html">Phaser.Group</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A Sprite or Group</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".findCommonAncestor"><span class="type-signature">&lt;static> </span>findCommonAncestor(element)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Given an object, it returns the list of its ancestors, from the nearest to the farest</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>element</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Phaser.Sprite.html">Phaser.Sprite</a></span>
-|
-
-<span class="param-type"><a href="Phaser.Group.html">Phaser.Group</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The Sprite or Group</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".getTree"><span class="type-signature">&lt;static> </span>getTree(element)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Given an object, it returns the list of its ancestors, from the nearest to the farest</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>element</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Phaser.Sprite.html">Phaser.Sprite</a></span>
-|
-
-<span class="param-type"><a href="Phaser.Group.html">Phaser.Group</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The Sprite or Group</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".pointInAncestor"><span class="type-signature">&lt;static> </span>pointInAncestor(sprite, ancestor [, pivot])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Given a sprite and one of its ancestors, it returns the coordinates of the sprite
-relative to its ancestor coordinate system</p>
+        <p>A shortcut placing a text in the center of the screen</p>
     </div>
     
 
@@ -663,82 +227,7 @@ relative to its ancestor coordinate system</p>
 
         <tr>
             
-                <td class="name"><code>sprite</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Phaser.Sprite.html">Phaser.Sprite</a></span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>A Sprite</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>ancestor</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Phaser.Sprite.html">Phaser.Sprite</a></span>
-|
-
-<span class="param-type"><a href="Phaser.Group.html">Phaser.Group</a></span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>A Sprite's ancestor</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>pivot</code></td>
+                <td class="name"><code>anchor</code></td>
             
 
             <td class="type">
@@ -771,7 +260,7 @@ relative to its ancestor coordinate system</p>
                 </td>
             
 
-            <td class="description last"><p>The pivot</p></td>
+            <td class="description last"><p>the anchor point</p></td>
         </tr>
 
     
@@ -831,30 +320,6 @@ relative to its ancestor coordinate system</p>
     
 
     
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>The computed point</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Phaser.Point</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
 
     
 </dd>
@@ -863,7 +328,7 @@ relative to its ancestor coordinate system</p>
             
 <hr>
 <dt>
-    <h4 class="name" id=".pointInDescendant"><span class="type-signature">&lt;static> </span>pointInDescendant(point, reference, descendant)</h4>
+    <h4 class="name" id="$$contains"><span class="type-signature"></span>$$contains(point)</h4>
     
     
 </dt>
@@ -871,7 +336,7 @@ relative to its ancestor coordinate system</p>
 
     
     <div class="description">
-        <p>Converts a point in an element coordinate system in one of it's descendant coordinates</p>
+        <p>A shortcut placing a text in the center of the screen</p>
     </div>
     
 
@@ -923,61 +388,7 @@ relative to its ancestor coordinate system</p>
 
             
 
-            <td class="description last"><p>A Point in <code>reference</code> coordinate system</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>reference</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Phaser.Sprite.html">Phaser.Sprite</a></span>
-|
-
-<span class="param-type"><a href="Phaser.Group.html">Phaser.Group</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A reference Sprite or Group</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>descendant</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Phaser.Sprite.html">Phaser.Sprite</a></span>
-|
-
-<span class="param-type"><a href="Phaser.Group.html">Phaser.Group</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A descendant Sprite or Group</p></td>
+            <td class="description last"><p>the anchor point</p></td>
         </tr>
 
     
@@ -1037,30 +448,6 @@ relative to its ancestor coordinate system</p>
     
 
     
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>The computed point</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Phaser.Point</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
 
     
 </dd>
@@ -1069,7 +456,7 @@ relative to its ancestor coordinate system</p>
             
 <hr>
 <dt>
-    <h4 class="name" id=".transformCoordinates"><span class="type-signature">&lt;static> </span>transformCoordinates(source, destination)</h4>
+    <h4 class="name" id="$$moveTo"><span class="type-signature"></span>$$moveTo(destination [, anchor])</h4>
     
     
 </dt>
@@ -1077,8 +464,7 @@ relative to its ancestor coordinate system</p>
 
     
     <div class="description">
-        <p>Given a source and destination graphic, it returns the coordinates of <code>source</code>
-related to the <code>destination</code> coordinate system</p>
+        <p>Moves the current object in the coordinates of another, considering groups/scaling</p>
     </div>
     
 
@@ -1101,7 +487,11 @@ related to the <code>destination</code> coordinate system</p>
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -1109,33 +499,6 @@ related to the <code>destination</code> coordinate system</p>
     </thead>
 
     <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>source</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Phaser.Sprite.html">Phaser.Sprite</a></span>
-|
-
-<span class="param-type"><a href="Phaser.Group.html">Phaser.Group</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The Sprite or Group to be dragged</p></td>
-        </tr>
-
     
 
         <tr>
@@ -1157,10 +520,62 @@ related to the <code>destination</code> coordinate system</p>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>The Sprite or Group to be dragged</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>a destination object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>anchor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Phaser.Point</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    new Phaser.Point(0.5, 0.5)
+                
+                </td>
+            
+
+            <td class="description last"><p>the anchor point</p></td>
         </tr>
 
     
@@ -1220,30 +635,643 @@ related to the <code>destination</code> coordinate system</p>
     
 
     
-    <h5>Returns:</h5>
+
     
-            
-<div class="param-desc">
-    <p>The computed point</p>
-</div>
+</dd>
 
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
         
+            
+<hr>
+<dt>
+    <h4 class="name" id="$$pointIn"><span class="type-signature"></span>$$pointIn(ancestor [, anchor])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>A shortcut placing a text in the center of the screen</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ancestor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Sprite.html">Phaser.Sprite</a></span>
+|
+
+<span class="param-type"><a href="Phaser.Group.html">Phaser.Group</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>an ancestor of this object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>anchor</code></td>
+            
+
+            <td class="type">
+            
+                
 <span class="param-type">Phaser.Point</span>
 
 
 
-    </dd>
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    new Phaser.Point(0.5, 0.5)
+                
+                </td>
+            
+
+            <td class="description last"><p>the anchor point</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
         
+            
+<hr>
+<dt>
+    <h4 class="name" id="$$tween"><span class="type-signature"></span>$$tween(properties, duration [, options])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>A shortcut for tween creation in Text</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>properties</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>properties to tween</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>duration</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>tween duration</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last"><p>Tween options</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ease</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    Phaser.Easing.Default
+                
+                </td>
+            
+
+            <td class="description last"><p>Default Ease function</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autostart</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>delay</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>repeat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>yoyo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 </dd>
