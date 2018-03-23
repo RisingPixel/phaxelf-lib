@@ -33,6 +33,22 @@ class TweensExtension {
     Phaser.Sprite.prototype.$$tween = this.phaserTweenShortcut;
 
     /**
+     * A shortcut for scale tween in sprites
+     * @param {Object} properties - properties to tween
+     * @param {Number} duration - tween duration
+     * @param {Object} [options={}] - Tween options
+     * @param {Object} [options.ease=Phaser.Easing.Default] - Default Ease function
+     * @param {Object} [options.autostart=false]
+     * @param {Object} [options.delay=0]
+     * @param {Object} [options.repeat=0]
+     * @param {Object} [options.yoyo=false]
+     * @memberof Phaser.Sprite
+     * @function $$tween
+     * @instance
+     */
+    Phaser.Sprite.prototype.$$scaleTween = this.phaserScaleTweenShortcut;
+
+    /**
      * A shortcut for tint tween
      * @param {Number} tint - The tint value to tween to
      * @param {Number} duration - tween duration
@@ -100,11 +116,18 @@ class TweensExtension {
     return this.game.add.tween(this)
       .to(properties, duration, ease, autostart, delay, repeat, yoyo);
   }
+  static phaserScaleTweenShortcut(properties, duration, options = {}) {
+    const {
+      ease, autostart, delay, repeat, yoyo,
+    } = options;
+    return this.game.add.tween(this.scale)
+      .to(properties, duration, ease, autostart, delay, repeat, yoyo);
+  }
   static phaserTintTweenShortcut(tint, duration, options = {}) {
     const {
       ease, autostart, delay, repeat, yoyo,
     } = options;
-    return TweenHelper.tint(this, tint, duration, ease, autostart, delay, repeat, yoyo)
+    return TweenHelper.tint(this, tint, duration, ease, autostart, delay, repeat, yoyo);
   }
 }
 
