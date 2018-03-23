@@ -9,7 +9,7 @@ Online documentation at [http://risingpixel.github.io/phaxelf-lib](http://rising
 
 A random set of utility classes to build better Phaser games.
 
-## Installation and usage
+## Installation
 To install this library in your project:
 
 ```bash
@@ -22,7 +22,10 @@ Or with yarn:
 yarn add phaxelf-lib
 ```
 
-Then just require what you need from the package:
+## Example Usage
+
+### Quickstart
+After installing the library, you can just require what you need from the package:
 
 ```javascript
 import { Drag } from 'phaxelf-lib';
@@ -30,6 +33,56 @@ import { Drag } from 'phaxelf-lib';
 mySprite = game.add.sprite(0, 0, 'somesprite.png');
 Drag.enable(mySprite);
 ```
+
+### Extensions
+Phaxelf provides a set of extensions for the default phaser methods, to handle scaling, coordinates and tweening easier.
+
+To use them, you have to initialize it manually in your game startup.
+
+```javascript
+import { Extensions } from 'phaxelf-lib';
+
+// ... your main file
+Extensions.init(LU);
+/// ... other stuff
+```
+
+Then, you can just find them ready as methods.
+
+#### Moving a sprite in the hierarchy in the same screen position of another one
+
+```javascript
+mySpriteInAScaledGroup = game.add.sprite(0, 0, 'sprite1.png');
+mySpriteInAnotherMessyScaledGroup = game.add.sprite(0, 0, 'sprite1.png');
+
+mySpriteInAScaledGroup.$$moveTo(mySpriteInAnotherMessyScaledGroup);
+```
+
+#### Check if a point is contained in a sprite, no physics
+
+```javascript
+sprite.$$contains(new Phaser.Point(100, 100)); // => true/false
+```
+
+#### Shortcut for tweens
+
+```javascript
+let tween = sprite.$$tween({ x: 100, y: 100}, 1000, { repeat: 10, yoyo: true, autostart: true });
+```
+
+#### Tint tweening
+
+```javascript
+let tween = sprite.$$tintTween(0xff0000, 1000);
+```
+
+#### Scale tweening
+
+```javascript
+let tween = sprite.$$scaleTween({ x: '+0.5', y: '+0.5' }, 1000, { yoyo: true });
+```
+
+Complete reference [here](http://risingpixel.github.io/phaxelf-lib).
 
 ### Library Local Development
 To test this library locally, first of all install the npm dependencies. Remember to run it every time you update them:
@@ -63,7 +116,7 @@ npm install --save path/to/phaxelf-lib && npm run start:dev
 
 On windows:
 
-```bash
+```batch
 npm install --save path\to\phaxelf-lib; npm run start:dev
 ```
 
