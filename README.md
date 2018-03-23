@@ -80,5 +80,4 @@ npm run docs:publish
 
 * Make sure you're logged in in npm, using `npm whoami`. If not, just register using `npm adduser`.
 * Update the version number in the `package.json` file, using [semantic versioning](http://semver.io). To achieve this, use `npm version patch`, replacing `patch` with one of `patch`, `minor`, `major`.
-* Push your changes to `master`
-* Run `npm run publish` to publish the new release
+* Run `npm publish` to publish the new release
