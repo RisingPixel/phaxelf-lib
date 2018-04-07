@@ -43,7 +43,7 @@ class GeomSpr extends Phaser.Sprite {
       graphics.lineStyle(opt.outLineData.width, opt.outLineData.color, opt.outLineData.alpha);
     }
 
-    this[type](path, graphics);
+    GeomSpr[type](path, graphics);
 
     graphics.endFill();
 
