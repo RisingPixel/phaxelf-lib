@@ -17,7 +17,7 @@ class RPUtils {
 
   // juakiz
 
-  /* Build text fitted to a parent 
+  /* Build text fitted to a parent
   *
   * args:
   * parent          (sprite, tilesprite, group or graphics)
@@ -31,7 +31,7 @@ class RPUtils {
   * anchor x axis   (int) (optional, default: 0.5)
   * anchor y axis   (int) (optional, default: 0.5)
   * alpha           (int) (optional)
-  * 
+  *
   * ret:
   * Phaser.text
   */
@@ -88,7 +88,7 @@ class RPUtils {
 
   /* Make box containing certain text (like whatsapp chatboxes)
   * args:
-  * 
+  *
   * text          (str)
   * font style    (object: font, fontSize, fill, align)
   * text width    (str **size need to be on pt!**)
@@ -96,12 +96,12 @@ class RPUtils {
   * bgColor       (hex)
   * anchor x axis (int) (optional, default: 0.5)
   * anchor y axis (int) (optional, default: 0.5)
-  * 
+  *
   */
   static textBox(text, fontStyle, txtWidth, padding, bgColor, aX, aY) {
     fontStyle = fontStyle || { font: 'Arial', fontSize: '35pt', fill: '#ffffff', align: 'left' };
     padding = padding || { x: 20/* { left: 20, right: 20 } */, y: 20/* { top: 20, bottom: 20 } */ };
-    
+
     let box = this.game.add.group();
 
     let label = box.labelBox = this.game.add.text(0, 0, localization.get(text));
@@ -114,7 +114,7 @@ class RPUtils {
 
     aX = (aX === undefined || aX === null) ? 0.5 : aX;
     aY = (aY === undefined || aY === null) ? 0.5 : aY;
-    
+
     let spriteBox = box.spriteBox = RPUtils.rectSpr(
       null,
       0,
@@ -164,7 +164,7 @@ class RPUtils {
 
   /* Make polygon sprites
   * args:
-  * 
+  *
   * parent        (any) (optional)
   * x             (int)
   * y             (int)
@@ -175,7 +175,7 @@ class RPUtils {
   * anchor x axis (int) (optional, default: 0.5)
   * anchor y axis (int) (optional, default: 0.5)
   * outline data  (object: width, color, alpha) (optional, default: no outline)
-  * 
+  *
   * ret:
   * Phaser.Sprite
   */
@@ -202,43 +202,6 @@ class RPUtils {
     parent && parent.addChild(sprite);
 
     return sprite;
-  }
-
-  /* Specific polygon case
-  * args: like polygon, but instead "path", 4 int (x, y, width, height)
-  * 
-  * ret:
-  * Phaser.Sprite
-  */
-  static rectSpr(parent, x, y, width, height, bgColor, aX, aY, outLineData) {
-    let path = [0, 0, width, 0, width, height, 0, height, 0, 0];
-    return RPUtils.polySpr(parent, x, y, path, bgColor, aX, aY, outLineData);
-  }
-
-  // ProGM
-  static enableDrag(sprite, clampToCenter = false) {
-    sprite.inputEnabled = true;
-    sprite.input.enableDrag(clampToCenter);
-    if (!clampToCenter) {
-      sprite.events.onDragStart.add(DragUtils.onDragStart, sprite);
-    }
-    sprite.events.onDragUpdate.add(DragUtils.onDragUpdate, sprite);
-  }
-
-  static onDragStart(sprite, pointer) {
-    sprite._inSpritePos = sprite.game.input.getLocalPosition(sprite, pointer);
-    DragUtils.onDragUpdate(sprite, pointer);
-  }
-
-  static onDragUpdate(sprite, pointer) {
-    let pos = sprite.game.input.getLocalPosition(sprite.parent, pointer);
-    if (sprite._inSpritePos) {
-      sprite.x = pos.x - sprite._inSpritePos.x;
-      sprite.y = pos.y - sprite._inSpritePos.y;
-    } else {
-      sprite.x = pos.x - sprite.width * (0.5 - sprite.anchor.x);
-      sprite.y = pos.y - sprite.height * (0.5 - sprite.anchor.y);
-    }
   }
 }
 

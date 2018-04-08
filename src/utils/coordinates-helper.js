@@ -2,6 +2,9 @@
  * A static class to handle coordinate transformations between objects
  */
 class CoordinatesHelper {
+  constructor() {
+    throw new Error('StaticClassError');
+  }
   /**
    * Given a source and destination graphic, it returns the coordinates of `source`
    * related to the `destination` coordinate system
@@ -14,7 +17,7 @@ class CoordinatesHelper {
     const destinationTree = this.getTree(destination);
     const commonAncestor = this.findCommonAncestor(sourceTree, destinationTree);
 
-    const parentPosition = this.positionInAncestor(source, commonAncestor, reference);
+    const parentPosition = this.pointInAncestor(source, commonAncestor, reference);
     const toPosition = this.pointInDescendant(parentPosition, commonAncestor, destination);
 
     return toPosition;
@@ -41,7 +44,7 @@ class CoordinatesHelper {
    * @param {Phaser.Point} [pivot=new Phaser.Point(0.5, 0.5)] - The pivot
    * @returns {Phaser.Point} The computed point
    */
-  static positionInAncestor(sprite, ancestor, pivot = new Phaser.Point(0.5, 0.5)) {
+  static pointInAncestor(sprite, ancestor, pivot = new Phaser.Point(0.5, 0.5)) {
     const coordinates = new Phaser.Point(
       this.getPositionX(sprite, pivot.x, true),
       this.getPositionY(sprite, pivot.y, true),
@@ -66,18 +69,20 @@ class CoordinatesHelper {
    */
   static pointInDescendant(point, reference, descendant) {
     const coordinates = new Phaser.Point(point.x, point.y);
-    let current = descendant;
-    while (current.parent !== reference) {
-      current = current.parent;
+    const tree = [];
+    let current = descendant.parent;
 
-      const withScale = current.parent !== reference;
-      if (withScale && current.parent) {
-        coordinates.x -= current.x / current.parent.scale.x;
-        coordinates.y -= current.y / current.parent.scale.y;
-      } else {
-        coordinates.x -= current.x;
-        coordinates.y -= current.y;
+    while (current !== reference) {
+      tree.push(current);
+      current = current.parent;
+      if (!current) {
+        throw new Error('`reference` is not an ancestor of `descendant`');
       }
+    }
+    for (let i = tree.length - 1; i >= 0; i -= 1) {
+      const element = tree[i];
+      coordinates.x = (coordinates.x - element.x) / element.scale.x;
+      coordinates.y = (coordinates.y - element.y) / element.scale.y;
     }
     return coordinates;
   }
