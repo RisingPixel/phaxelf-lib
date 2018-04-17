@@ -43,7 +43,11 @@ class GeomSpr extends Phaser.Sprite {
       graphics.lineStyle(opt.outLineData.width, opt.outLineData.color, opt.outLineData.alpha);
     }
 
-    GeomSpr[type](path, graphics);
+    if (type === 'rectangle' || type === 'circle' || type === 'polygon') {
+      GeomSpr[type](path, graphics);
+    } else {
+      console.warn("Phaxelf-lib: Wrong shape type, try 'rectangle', 'circle' or 'polygon'...");
+    }
 
     graphics.endFill();
 
@@ -79,6 +83,7 @@ class GeomSpr extends Phaser.Sprite {
     if (path instanceof Array) {
       graphics.drawCircle(path[0], path[1], path[2]);
     } else if (path instanceof Phaser.Circle) {
+      // console.log(path.x, path.y, path.diameter);
       graphics.drawCircle(path.x, path.y, path.diameter);
     } else {
       console.warn('Phaxelf: Trying to build a circle with a wrong path format.');
