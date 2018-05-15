@@ -7,7 +7,7 @@ class TweensExtension {
 
   static init() {
     this.extendSprite();
-    this.extendText();
+    this.extendGraphics();
     this.extendGroup();
   }
   /**
@@ -87,13 +87,13 @@ class TweensExtension {
     Phaser.Group.prototype.$$tween = this.phaserTweenShortcut;
   }
   /**
-   * Phaser Sprite extensions
+   * Phaser Graphics extensions
    * @class
-   * @alias Phaser.Text
+   * @alias Phaser.Graphics
    */
-  static extendText() {
+  static extendGraphics() {
     /**
-     * A shortcut for tween creation in Text
+     * A shortcut for tween creation in Graphics
      * @param {Object} properties - properties to tween
      * @param {Number} duration - tween duration
      * @param {Object} [options={}] - Tween options
@@ -102,11 +102,27 @@ class TweensExtension {
      * @param {Object} [options.delay=0]
      * @param {Object} [options.repeat=0]
      * @param {Object} [options.yoyo=false]
-     * @memberof Phaser.Text
+     * @memberof Phaser.Graphics
      * @function $$tween
      * @instance
      */
-    Phaser.Text.prototype.$$tween = this.phaserTweenShortcut;
+    Phaser.Graphics.prototype.$$tween = this.phaserTweenShortcut;
+
+    /**
+     * A shortcut for scale tween in graphics
+     * @param {Object} properties - properties to tween
+     * @param {Number} duration - tween duration
+     * @param {Object} [options={}] - Tween options
+     * @param {Object} [options.ease=Phaser.Easing.Default] - Default Ease function
+     * @param {Object} [options.autostart=false]
+     * @param {Object} [options.delay=0]
+     * @param {Object} [options.repeat=0]
+     * @param {Object} [options.yoyo=false]
+     * @memberof Phaser.Graphics
+     * @function $$scaleTween
+     * @instance
+     */
+    Phaser.Graphics.prototype.$$scaleTween = this.phaserScaleTweenShortcut;
   }
 
   static phaserTweenShortcut(properties, duration, options = {}) {

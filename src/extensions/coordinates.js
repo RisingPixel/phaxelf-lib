@@ -11,7 +11,7 @@ class CoordinatesExtension {
   static init(LU) {
     this.LU = LU;
     this.extendSprite();
-    this.extendText();
+    this.extendGraphics();
     this.extendGroup();
   }
 
@@ -52,46 +52,38 @@ class CoordinatesExtension {
     Phaser.Sprite.prototype.$$contains = this.phaserSpriteContains;
   }
 
-  static extendText() {
+  static extendGraphics() {
     /**
-     * A shortcut placing a text in the center of the screen
+     * A shortcut placing a graphics in the center of the screen
      * @param {Phaser.Point} [anchor=new Phaser.Point(0.5, 0.5)] - the anchor point
-     * @memberof Phaser.Text
+     * @memberof Phaser.Graphics
      * @function $$centered
      * @instance
      */
-    Phaser.Text.prototype.$$centered = this.phaserSpriteCentered;
+    Phaser.Graphics.prototype.$$centered = this.phaserSpriteCentered;
     /**
      * Moves the current object in the coordinates of another, considering groups/scaling
      * @param {Phaser.Sprite|Phaser.Group} destination - a destination object
      * @param {Phaser.Point} [anchor=new Phaser.Point(0.5, 0.5)] - the anchor point
-     * @memberof Phaser.Text
+     * @memberof Phaser.Graphics
      * @function $$moveTo
      * @instance
      */
-    Phaser.Text.prototype.$$moveTo = this.phaserSpriteMoveTo;
+    Phaser.Graphics.prototype.$$moveTo = this.phaserSpriteMoveTo;
     /**
-     * A shortcut placing a text in the center of the screen
+     * A shortcut placing a graphics in the center of the screen
      * @param {Phaser.Sprite|Phaser.Group} ancestor - an ancestor of this object
      * @param {Phaser.Point} [anchor=new Phaser.Point(0.5, 0.5)] - the anchor point
-     * @memberof Phaser.Text
+     * @memberof Phaser.Graphics
      * @function $$pointIn
      * @instance
      */
-    Phaser.Text.prototype.$$pointIn = this.phaserSpritePointIn;
-    /**
-     * A shortcut placing a text in the center of the screen
-     * @param {Phaser.Point} point - the anchor point
-     * @memberof Phaser.Text
-     * @function $$contains
-     * @instance
-     */
-    Phaser.Text.prototype.$$contains = this.phaserSpriteContains;
+    Phaser.Graphics.prototype.$$pointIn = this.phaserSpritePointIn;
   }
 
   static extendGroup() {
     /**
-     * A shortcut placing a text in the center of the screen
+     * A shortcut placing a graphics in the center of the screen
      * @param {Phaser.Point} [anchor=new Phaser.Point(0.5, 0.5)] - the anchor point
      * @memberof Phaser.Group
      * @function $$centered
