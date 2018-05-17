@@ -53,9 +53,7 @@ class RectangleOverlay extends Geom {
    * @param {Number} diameter - Diameter of the masking circle.
    */
   addHighlightCircle(x, y, diameter) {
-    this.$mask = new Geom(this.game, x, y, 'circle', [0, 0, diameter]);
-    this.addChild(this.$mask);
-    this.mask = this.$mask;
+    this.customMask = new Geom(this.game, x, y, 'circle', [0, 0, diameter]);
   }
 
   /**
@@ -66,9 +64,7 @@ class RectangleOverlay extends Geom {
    * @param {Number} height - Height of masking rectangle.
    */
   addHighlightRect(x, y, width, height) {
-    this.$mask = new Geom(this.game, x, y, 'rectangle', [x, y, width, height]);
-    this.addChild(this.$mask);
-    this.mask = this.$mask;
+    this.customMask = new Geom(this.game, x, y, 'rectangle', [x, y, width, height]);
   }
 
   /**
@@ -78,22 +74,20 @@ class RectangleOverlay extends Geom {
    * @param {*} mask - Custom valid object to use as mask (Phaser.Sprite, Phaser.Graphic, etc).
    */
   addHighlightCustom(x, y, mask) {
-    this.$mask = mask;
-    this.addChild(this.$mask);
-    this.mask = this.$mask;
+    this.customMask = mask;
   }
 
   /**
    * Manual setting for the mask object
-   * @param {*} mask - Custom valid object to use as mask (Phaser.Sprite, Phaser.Graphic, etc).
+   * @param {*} customMask - Custom valid object to use as mask (Phaser.Sprite, Phaser.Graphic, etc).
    */
-  set mask(mask) {
+  set customMask(mask) {
     this.$mask = mask;
     this.addChild(this.$mask);
     this.mask = this.$mask;
   }
 
-  get mask() {
+  get customMask() {
     return this.$mask;
   }
 
