@@ -54,7 +54,7 @@ class RectangleOverlay extends Geom {
    */
   addHighlightCircle(x, y, diameter) {
     this.$mask = new Geom(this.game, x, y, 'circle', [0, 0, diameter]);
-    this.add(this.$mask);
+    this.addChild(this.$mask);
     this.mask = this.$mask;
   }
 
@@ -67,7 +67,7 @@ class RectangleOverlay extends Geom {
    */
   addHighlightRect(x, y, width, height) {
     this.$mask = new Geom(this.game, x, y, 'rectangle', [x, y, width, height]);
-    this.add(this.$mask);
+    this.addChild(this.$mask);
     this.mask = this.$mask;
   }
 
@@ -79,7 +79,7 @@ class RectangleOverlay extends Geom {
    */
   addHighlightCustom(x, y, mask) {
     this.$mask = mask;
-    this.add(this.$mask);
+    this.addChild(this.$mask);
     this.mask = this.$mask;
   }
 
@@ -89,7 +89,7 @@ class RectangleOverlay extends Geom {
    */
   set mask(mask) {
     this.$mask = mask;
-    this.add(this.$mask);
+    this.addChild(this.$mask);
     this.mask = this.$mask;
   }
 
