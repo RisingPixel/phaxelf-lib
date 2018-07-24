@@ -83,7 +83,6 @@ class GeomSpr extends Phaser.Sprite {
     if (path instanceof Array) {
       graphics.drawCircle(path[0], path[1], path[2]);
     } else if (path instanceof Phaser.Circle) {
-      // console.log(path.x, path.y, path.diameter);
       graphics.drawCircle(path.x, path.y, path.diameter);
     } else {
       console.warn('Phaxelf: Trying to build a circle with a wrong path format.');
