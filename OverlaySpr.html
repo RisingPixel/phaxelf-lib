@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Graphics</title>
+	<title>Documentation Class: OverlaySpr</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,14 +65,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Graphics</h1>
+	<h1 class="page-title">Class: OverlaySpr</h1>
 <section>
 
 <header>
     
         <h2>
-        Graphics
+        OverlaySpr
         </h2>
+        
+            <div class="class-description"><p>A Phaser Sprite extension to make game overlays and simple forms holes.</p></div>
         
     
 </header>
@@ -84,7 +86,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Graphics"><span class="type-signature"></span>new Graphics()</h4>
+    <h4 class="name" id="OverlaySpr"><span class="type-signature"></span>new OverlaySpr(game, x, y, width, height, path [, opt])</h4>
     
     
 </dt>
@@ -92,7 +94,7 @@
 
     
     <div class="description">
-        <p>Phaser Graphics extensions</p>
+        <p>Create a sprite as overlay with an (optional) simple form hole.</p>
     </div>
     
 
@@ -101,6 +103,447 @@
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>game</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Phaser.Game</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>A Phaser Game instance.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>x coordinate of the outer overlay's border.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>y coordinate of the outer overlay's border.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Width of the outer overlay's border.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Height of the outer overlay's border.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>Path to draw the hole.*</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>An optional list of options.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>bgColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Hex</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0xFFFFFF
+                
+                </td>
+            
+
+            <td class="description last"><p>Background color.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>alpha</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0.5
+                
+                </td>
+            
+
+            <td class="description last"><p>Alpha value.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>anticlockwise</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>Drawing order for polygons.<strong>
+*Hole should be an instance of any: Rectangle.Phaser, Circle.Phaser, Polygon.Phaser or none
+(if no hole is needed). Cordinates will be specified with absolute values (not relatives to
+overlay itself)
+</strong>When drawing polygons, to do the hole trick nicely, you should specify if you are setting
+polygon points in anticlockwise order (clockwise is default).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -162,6 +605,17 @@
     </div>
 
     
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="Phaser.Sprite.html">Phaser.Sprite</a></li>
+    </ul>
+
+
+    
 
     
 
@@ -188,7 +642,7 @@
 
     
     <div class="description">
-        <p>A shortcut placing a graphics in the center of the screen</p>
+        <p>A shortcut for placing a sprite in the center of the screen</p>
     </div>
     
 
@@ -277,6 +731,152 @@
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Sprite.html#$$centered">Phaser.Sprite#$$centered</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="$$contains"><span class="type-signature"></span>$$contains(point)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Checks if the sprites contains a point</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Phaser.Point</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the anchor point</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Sprite.html#$$contains">Phaser.Sprite#$$contains</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -465,6 +1065,15 @@
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Sprite.html#$$moveTo">Phaser.Sprite#$$moveTo</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -523,7 +1132,7 @@
 
     
     <div class="description">
-        <p>A shortcut placing a graphics in the center of the screen</p>
+        <p>Gets the cooordinates of the current object based on one of its ancestors</p>
     </div>
     
 
@@ -652,6 +1261,15 @@
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Sprite.html#$$pointIn">Phaser.Sprite#$$pointIn</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -702,7 +1320,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="$$scaleTween"><span class="type-signature"></span>$$scaleTween(properties, duration [, options])</h4>
+    <h4 class="name" id="$$tintTween"><span class="type-signature"></span>$$tintTween(tint, duration [, options])</h4>
     
     
 </dt>
@@ -710,7 +1328,7 @@
 
     
     <div class="description">
-        <p>A shortcut for scale tween in graphics</p>
+        <p>A shortcut for tint tween</p>
     </div>
     
 
@@ -749,13 +1367,13 @@
 
         <tr>
             
-                <td class="name"><code>properties</code></td>
+                <td class="name"><code>tint</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">Number</span>
 
 
 
@@ -778,7 +1396,7 @@
                 </td>
             
 
-            <td class="description last"><p>properties to tween</p></td>
+            <td class="description last"><p>The tint value to tween to</p></td>
         </tr>
 
     
@@ -1101,6 +1719,15 @@
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Sprite.html#$$tintTween">Phaser.Sprite#$$tintTween</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -1160,7 +1787,7 @@
 
     
     <div class="description">
-        <p>A shortcut for tween creation in Graphics</p>
+        <p>A shortcut for tween creation in sprites</p>
     </div>
     
 
@@ -1552,7 +2179,21 @@
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Sprite.html#$$tween">Phaser.Sprite#$$tween</a>
+			</li>
+		</ul>
+	</dd>
+	
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Phaser.Sprite.html#$$tween">Phaser.Sprite#$$tween</a>
+    </li></ul></dd>
     
 
     
@@ -1648,7 +2289,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on July 24th 2018, 3:57:26 pm
+		on July 24th 2018, 3:57:25 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
