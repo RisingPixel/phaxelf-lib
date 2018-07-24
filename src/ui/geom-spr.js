@@ -11,7 +11,9 @@ class GeomSpr extends Phaser.Sprite {
  * @param {Number} x - x coordinate.
  * @param {Number} y - y coordinate.
  * @param {string} type - Type of Shape ('circle', 'rectangle' or 'polygon').
- * @param {array} path - Data to draw shapes. For polygon accepts any polygon construction setup.*
+ * @param {array} path - Data to draw shapes. For polygon accepts any polygon construction setup.
+ * Path will accept any, an array or the Phaser shapes itself. In case of polygon, it also accept
+ * all formats available to construct Phaser.Polygon.
  * @param {Object} [opt] - An optional list of options.
  * @param {Hex} [opt.bgColor = 0xFFFFFF] - Shape's background color.
  * @param {Number} [opt.aX = 0.5] - Anchor in x axis.
@@ -22,8 +24,6 @@ class GeomSpr extends Phaser.Sprite {
  * @param {Hex} opt.outLineData.color - Outline color.
  * @param {Number} opt.outLineData.alpha - Outline alpha.
  * @param {*} [opt.parent] - Assign a parent if you setted it in this property.
- * *Path will accept any, an array or the Phaser shapes itself. In case of polygon, it also accept
- * all formats available to construct Phaser.Polygon
  */
   constructor(game, x, y, type, path, opt = {}) {
     super(game, x, y);

@@ -12,16 +12,15 @@ class OverlaySpr extends Phaser.Sprite {
  * @param {Number} y - y coordinate of the outer overlay's border.
  * @param {Number} width - Width of the outer overlay's border.
  * @param {Number} height - Height of the outer overlay's border.
- * @param {array} path - Path to draw the hole.*
+ * @param {array} path - Path to draw the hole. Hole should be an instance of any:
+ * Rectangle.Phaser, Circle.Phaser, Polygon.Phaser or none (if no hole is needed). Cordinates will
+ * be specified with absolute values (not relatives to overlay itself).
  * @param {Object} [opt] - An optional list of options.
  * @param {Hex} [opt.bgColor = 0xFFFFFF] - Background color.
  * @param {Number} [opt.alpha = 0.5] - Alpha value.
- * @param {Boolean} [opt.anticlockwise = false] - Drawing order for polygons.**
- * *Hole should be an instance of any: Rectangle.Phaser, Circle.Phaser, Polygon.Phaser or none
- * (if no hole is needed). Cordinates will be specified with absolute values (not relatives to
- * overlay itself)
- * **When drawing polygons, to do the hole trick nicely, you should specify if you are setting
- * polygon points in anticlockwise order (clockwise is default).
+ * @param {Boolean} [opt.anticlockwise = false] - Drawing order for polygons. When drawing polygons,
+ * to do the hole trick nicely, you should specify if you are setting polygon points in
+ * anticlockwise order (clockwise is default).
  */
   constructor(game, x, y, width, height, path = false, opt = {}) {
     super(game, x, y);
