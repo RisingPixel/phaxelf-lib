@@ -18,6 +18,7 @@ class LocText extends Phaser.Text {
    * @param {string} [options.fontStyle=30px Arial] - The text style, i.e. '30px Arial'
    * @param {string} [options.fill=#000] - Fill color
    * @param {string} [options.align=left] - Text alignment
+   * @param {Number} [options.lineSpacing] - Space between lines, if there are more than one
    * @param {string} [options.padX=0] - X padding referred to the container
    * @param {string} [options.padY=0] - Y padding referred to the container
    */
@@ -29,6 +30,8 @@ class LocText extends Phaser.Text {
       fill: options.fill || '#000',
       align: options.align || 'left',
     });
+
+    this.lineSpacing = options.lineSpacing || 0;
 
     this.$parseOptions(options);
 
