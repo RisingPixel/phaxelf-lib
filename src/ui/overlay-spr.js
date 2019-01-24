@@ -59,6 +59,7 @@ class OverlaySpr extends Phaser.Sprite {
 
     if (anticlockwise) points.reverse();
 
+    polygon.points = polygon.points.map(point => Phaser.Point.subtract(point, this.position));
     points = polygon.points.concat(points);
     this.$graphics.drawPolygon(points);
   }
