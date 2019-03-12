@@ -107,7 +107,28 @@ class LocText extends Phaser.Text {
    * Refits the text inside the box provided
    */
   refit() {
-    localization.fitText(this, this.textWidth, this.textHeight);
+    if (!this.defaultFontSize) {
+      this.defaultFontSize = this.fontSize.replace(/\D/g, '');
+    }
+
+    this.fontSize = `${this.defaultFontSize}pt`;
+
+    if (this.wordWrap) {
+      this.textWidth = this.wordWrapWidth;
+    }
+
+    if (this.width > this.textWidth || this.height > this.textHeight) {
+      const hSize = Math.floor(this.defaultFontSize * (this.textWidth / this.width));
+      const vSize = Math.floor(this.defaultFontSize * (this.textHeight / this.height));
+      this.fontSize = `${Math.min(vSize, hSize)}pt`;
+    }
+  }
+
+  /**
+   * Set first character to upper case and return it
+   */
+  capitalize() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
   }
 }
 

@@ -1,5 +1,5 @@
 /**
- * A Phaser Sprite extension to make game overlays and simple forms holes.
+ * A Phaser Sprite extension to make game overlays and simple forms holes using graphics.
  * @extends Phaser.Sprite
  */
 

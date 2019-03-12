@@ -1,8 +1,14 @@
 import Globals from './../kernel/globals';
 
 /* RP Utils
-** Some parts are inspired in legendary_heros repo's "ci.js" **
 ** 2018 Rising Pixel
+**
+** ********************************** **
+** THIS PART OF LIBRARY IS DEPRECATED **
+** PLEASE USE THE OTHER MODULES,      **
+** ARE MORE SPECIFIC AND BETTER MADE. **
+** ********************************** **
+**
 */
 
 class RPUtils {
@@ -14,8 +20,6 @@ class RPUtils {
   {
     this.game = game;
   }
-
-  // juakiz
 
   /* Build text fitted to a parent
   *
@@ -136,9 +140,7 @@ class RPUtils {
     return box;
   }
 
-  /*
-  * Refactor this for the god sake
-  */
+  // There is another module to make this things...
   static circSpr(parent, x, y, diameter, bgColor, aX, aY, outLineData) {
     bgColor = (bgColor === undefined || bgColor === null) ? 0xFFFFFF : bgColor;
 

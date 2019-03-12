@@ -1,6 +1,10 @@
 /**
  * A Geom extension class useful to make tutorial (or another type of) overlay.
  * @extends Phaser.Sprite
+ * 
+ ** *** **
+ ** WIP **
+ ** *** **
  */
 import Geom from './geom-spr';
 
